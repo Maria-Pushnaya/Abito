@@ -4,10 +4,16 @@ body {
     color:#0A143A;  /* цвет текста */
    
 }
-.header {
+/* параметры и для хэдера идля пдж контента */
+.container {
     max-width: 1146px; /* максимальная ширина элемента */
     margin: auto; /* автоматическое выравнивание по середине */
+}
+.header {
+   
     padding-top: 30px; /* отступ сврху для всей шапки */
+    padding-bottom: 30px;/* отступ снизу для всей шапки */
+    margin-bottom: 12px; /* отступ вниз от блока для всей шапки */
 }
 .navbar{
     display: flex; /* гибкое поведение для элемнта.гибкий блок */
@@ -81,5 +87,86 @@ body {
 }
 .search-button-text {
     margin-left: 5px; /* отступ самоого текста "найти" от лупы */
+}
+
+.page-content {
+    display: grid; /* свойство позволяет задать очень гибкую разметку. делим блок на кусочки */
+    grid-template-columns: 9fr 3fr; /* сожем указать сколько будет колонок. мы говорим что  нас две колоки с разным весом, с рзной фракцией. в сумме 12 фракцие, т.е. 12 колонок */
+    grid-column-gap: 30px; /* воздух между фракциями этих колонок */
+
+}
+.card-image {
+    border-radius: 10px;
+    width: 264px;
+    height: 178px;
+    object-fit: cover; /* если картинка не будет иметь такие параметры, она могла обрезаться. */
+
+}
+.cards {
+    display: flex; /* располоение карточек в ряд */
+    flex-wrap: wrap;/* если карточки не помещаются, то ои переносятся  */
+   /* justify-content: space-between; /* что бы карточки разбросались по краям, но когда мы делаем 12 карточек, последние тоже разьезжаются. поэтому... */
+
+}
+.card {
+    margin-bottom: 20px;/* что бы у каждой карточки был внизу отступ */
+}   
+.card:not(:nth-child(3n)) {
+        margin-right: 20px; /*для всех карточек, но не у каждой третьей должен быть отсп справа*/
+    }
+.card-title {
+    font-size: 16px; /*  параметры для текста самой карточки */
+    line-height: 19px;
+    color: #256EEB;
+    margin-top: 12px; /* отступ названия карточки от картинки */
+    margin-bottom: 5px;  /* отступ названия карточки от цены */
+}
+.card-header {
+    display: flex; 
+    justify-content: space-between; /* устанока кнопки лайка с левой стороны */
+    align-items: center; /* убрать расплющивание кнопки лайка */
+}
+.like {
+    background-color: white; /* фон копки лайка */
+    border: none; /* отключить обводку кноки лайка */
+    cursor: pointer; /* наведение на лайк, появляется пальчик */
+    margin-left: 15px; /* отступ лайка от текста */
+}
+.card-link {
+text-decoration: none; /*отключение подчеркивания ссылки названия карточки*/
+}
+
+.card-prise {
+    font-size: 16px; /* параметры для цен*/ 
+    line-height: 19px;
+    color: #0A143A;
+    margin-bottom: 10px; /* отступ от ценника до комментакрия с гороом и датой */
+    display: block; /*блочной расположение, что бы для нео сработкали отступ внутри нео*/
+}
+.card-text {
+    font-size: 14px;    /*параметры для комментариев под ценой*/
+    line-height: 16px;
+    color: #C4C4C4;
+    margin-bottom: 4px; /*расстояние между городом и датой*/
+    margin-top: 0;/*что бы было расстояние между ними*/
+}
+.sidebar .page-title {
+    font-size: 18px; /*параметры для заголовка сайдбара*/
+    line-height: 21px;
+}
+.service {
+    margin-top: 25px; /*отступ в сайдбаре от блоков*/
+}
+.service-title{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+.service-text{
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 217px;
 }
 
